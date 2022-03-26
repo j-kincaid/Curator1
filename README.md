@@ -1,5 +1,6 @@
 # CURATOR
 
+Please visit my [CallForEntries](https://github.com/j-kincaid/CallForEntries) repo to see the Django app in progress.
 
 ### CONCEPT:
 
