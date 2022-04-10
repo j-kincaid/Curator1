@@ -1,6 +1,4 @@
-# CURATOR
-
-Please visit my [CallForEntries](https://github.com/j-kincaid/CallForEntries) repo to see the Django app in progress.
+# Curator
 
 ### CONCEPT:
 
@@ -28,10 +26,14 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 | Administrator | Higher education degree in Art History, Curatorial Studies, Museum Studies, or a related specialty. |  Fulfill the mission of the organization; appropriate use of resources; public image. | Securing income streams; supporting diversity, equity and inclusion, accessibility; time management. |
 |    |       |       |      |  
 | Panelist | Likely BFA in Music, Dance, Studio Art, Theater, Creative Writing, Art History, or a related discipline. Could also be a critic or activist. | Build professional reputation; academic and professional advancement; influence an art movement. | Balancing multiple responsibilities of teaching, lecturing, and own creative practice. |
-
-
+|    |       |       |      | 
+| Artist | Similar to Panelist in Education; sometimes self-taught. | Exhibitions enable the work to be seen by a wider audience, bring acclaim, add value to the art. | Balance of multiple responsibilities; economic risks associated with gig work. | 
 
 ## Database Design
+
+
+
+
 
 ![Curator's Assistant](https://user-images.githubusercontent.com/11914762/159535642-13b74456-1df3-45be-a0ed-f423373ca20c.png)
 
