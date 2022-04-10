@@ -32,10 +32,8 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 ## Database Design
 
 
+![Curator's Assistant](https://user-images.githubusercontent.com/11914762/162630361-e14fd23a-f2f3-4180-97ac-7c5007f7594f.png)
 
-
-
-![Curator's Assistant](https://user-images.githubusercontent.com/11914762/159535642-13b74456-1df3-45be-a0ed-f423373ca20c.png)
 
 
 
