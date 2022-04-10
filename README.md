@@ -25,9 +25,9 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 | --- | ------ | -------- | ----------- | 
 | Administrator | Higher education degree in Art History, Curatorial Studies, Museum Studies, or a related specialty. |  Fulfill the mission of the organization; appropriate use of resources; public image. | Securing income streams; supporting diversity, equity and inclusion, accessibility; time management. |
 |    |       |       |      |  
-| Panelist | Likely BFA in Music, Dance, Studio Art, Theater, Creative Writing, Art History, or a related discipline. Could also be a critic or activist. | Build professional reputation; academic and professional advancement; influence an art movement. | Balancing multiple responsibilities of teaching, lecturing, and own creative practice. |
+| Panelist | Likely BFA in Music, Dance, Studio Art, Theater, Creative Writing, Art History, or a related discipline. Could also be a critic or activist. | Build professional reputation; academic and professional advancement; influence an art movement. | Time management; multiple responsibilities of teaching, lecturing, and own creative practice. |
 |    |       |       |      | 
-| Artist | Similar to Panelist in Education; sometimes self-taught. | Exhibitions enable the work to be seen by a wider audience, bring acclaim, add value to the art. | Balance of multiple responsibilities; economic risks associated with gig work. | 
+| Artist | Similar to Panelist in Education; sometimes self-taught. | Exhibitions enable the work to be seen by a wider audience, bring acclaim, add value to the art. | Time management; responsibilities and risks associated with gig work. | 
 
 ## Database Design
 
