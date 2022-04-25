@@ -1,7 +1,9 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'entries/style.css' %}">
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
     <header>
         <title>Art Ballot</title>
 
@@ -10,8 +12,7 @@
         <h1>These are the entries:</h1>
         <ul>
             {% for artwork in entries %}
-            <li>{{artwork.artwork_title}}</li>
-            <li>{{artwork.artwork_medium}}</li>
+            <li class="artwork-li">{{artwork.artwork_title}}</li>
             <br />
             {% endfor %}
         </ul>
