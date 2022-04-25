@@ -1,5 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import Artwork
 
 
-def index(request):
-    return HttpResponse("You are viewing the Entries.")
+def list(request):
+    all_artworks = Artwork.objects.all()
+    return render(request, 'entries/entries_list.html', {'entries': all_artworks})
