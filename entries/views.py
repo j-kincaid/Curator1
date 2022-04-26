@@ -1,10 +1,9 @@
 from typing import List
 from django.shortcuts import render
 from django.http import Http404
-from django.views.generic import ListView, DetailView
+from django.views.generic import DetailView, ListView
 
 from .models import Artwork
-
 
 class EntriesListView(ListView):
     model = Artwork
@@ -14,4 +13,5 @@ class EntriesListView(ListView):
 class EntriesDetailView(DetailView):
     model = Artwork
     context_object_name = "entry"
+
 

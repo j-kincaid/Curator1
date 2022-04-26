@@ -1,7 +1,16 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'entries/style.css' %}">
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+
+<!-- {% block content %}
+
         <h1>{{artwork.artwork_title}}</h1>
         <p>{{artwork.artwork_medium}}</p>
-</html>
+
+{% endblock %} -->
+
+
+{% block content %}
+<div class="border round">
+    <h1 class="my-5">{{entry.artwork_title}}</h1>
+    <p>{{entry.artwork_medium}}</p>
+</div>
+{% endblock %}

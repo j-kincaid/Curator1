@@ -1,20 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-    </head>
-    <header>
-        <title>Art Ballot</title>
+{% extends 'base.html' %}
 
-    </header>
-    <body>
-        <h1>These are the entries:</h1>
-        <ul>
-            {% for artwork in entries %}
-            <li class="artwork-li">{{artwork.artwork_title}}</li>
-            <br />
+{% block content %}
+    <h1 class="my-5">These are the entries:</h1>
+    <div class="row row-cols3 g-2"> 
+            {% for entry in entries %}
+            <div class="col"> 
+                <div class="p-3 border">
+                    <a href="{% url 'entries.detail' pk=entry.id %}" class="text-dark text-decoration-non">
+                        <h3>{{entry.artwork_title}}</h3>
+                    </a>
+                    {{entry.artwork_medium|truncatechars:10}}
+
+                </div>
+            </div>
             {% endfor %}
-        </ul>
-    </body>
-</html>
+
+        </div>
+{% endblock %}
