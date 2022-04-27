@@ -6,11 +6,10 @@
             {% for entry in entries %}
             <div class="col"> 
                 <div class="p-3 border">
-                    <a href="{% url 'entries.detail' pk=entry.id %}" class="text-dark text-decoration-non">
+                    <a href="{% url 'entries.detail' pk=entry.id %}" class="text-dark text-decoration-none">
                         <h3>{{entry.artwork_title}}</h3>
                     </a>
-                    {{entry.artwork_medium|truncatechars:10}}
-
+                    {{entry.artwork_medium}}
                 </div>
             </div>
             {% endfor %}
