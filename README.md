@@ -34,6 +34,10 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 
 ![Curator's Assistant](https://user-images.githubusercontent.com/11914762/162630361-e14fd23a-f2f3-4180-97ac-7c5007f7594f.png)
 
+### Home Screen Design 
+
+![iPhone 13, 12 Pro Max – 1](https://user-images.githubusercontent.com/11914762/165846632-bcd930e1-678a-4475-90fa-279bacbc8e6e.png)
+
 
 
 
