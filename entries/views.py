@@ -13,5 +13,5 @@ class EntriesListView(ListView):
 class EntriesDetailView(DetailView):
     model = Artwork
     context_object_name = "entry"
-
+    template_name = "entries/entry_detail.html"
 

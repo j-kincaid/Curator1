@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-        <h1>{{artwork.artwork_title}}</h1>
-        <p>{{artwork.artwork_medium}}</p>
-
-{% endblock %}
-
-
-{% block content %}
 <div class="border round">
     <h1 class="my-5">{{entry.artwork_title}}</h1>
     <p>{{entry.artwork_medium}}</p>
 </div>
+<a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back</a>
 {% endblock %}
