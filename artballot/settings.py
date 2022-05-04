@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'votes',
     'entries',
+    'mgmt',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'static/templates',
+            'mgmt/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
