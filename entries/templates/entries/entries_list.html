@@ -9,7 +9,7 @@
                     <a href="{% url 'entries.detail' pk=entry.id %}" class="text-dark text-decoration-none">
                         <h3>{{entry.artwork_title}}</h3>
                     </a>
-                    {{entry.artwork_medium}}
+                    {{entry.medium}}
                 </div>
             </div>
             {% endfor %}

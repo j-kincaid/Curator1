@@ -11,16 +11,16 @@ class Artwork(models.Model):
     vote_average = models.IntegerField(default=0, null=True, blank=True)
 
     MEDIA = (
-        ('PA', 'Painting'),
-        ('SC', 'Sculpture'),
-        ('PH', 'Photography'),
-        ('CE', 'Ceramic'),
-        ('TX', 'Textile'),
-        ('PT','Print'),
-        ('DG', 'Digital'),
-        ('OT','Other'),
+        ('Painting', 'PAINTING'),
+        ('Sculpture', 'SCULPTURE'),
+        ('Photography', 'PHOTO'),
+        ('Ceramic', 'CERAMIC'),
+        ('Textile', 'TEXTILE'),
+        ('Print', 'PRINT'),
+        ('Digital', 'DIGITAL'),
+        ('Other', 'OTHER',),
     )
-    medium = models.CharField(max_length=2, null=True, choices=MEDIA)
+    medium = models.CharField(max_length=20, null=True, choices=MEDIA)
     
     height_in_inches = models.DecimalField(max_digits=5, decimal_places=2, default="inches")
     width_in_inches = models.DecimalField(max_digits=5, decimal_places=2, default="inches")
@@ -39,13 +39,7 @@ class Artist(models.Model):
     def __str__(self):
         return self.full_name
 
-# Trying to add this subclass as per docs unsuccessful 4/24/22 2:31PM
-
-
-
 class Comment(models.Model):
-    # artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
-
     artworks = models.ManyToManyField('Artwork', blank=True)
     body = models.TextField(null=True, blank=True)
     value = models.CharField(max_length=500)
