@@ -5,8 +5,7 @@ from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
-from .forms import EntriesForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Artwork
 
 
@@ -16,21 +15,14 @@ class EntriesDeleteView(DeleteView):
 
 class EntriesUpdateView(UpdateView):
     model = Artwork
-    fields = ['artwork_title', 'medium']
-    template_name_suffix = '_update_form'
+    fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    template_name_suffix = '_update'
 
 class EntriesCreateView(CreateView):
     model = Artwork
-    fields = ['artwork_title', 'medium']
-    # fields = ['artwork_title', 'medium', 'vote_total', 'vote_average', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
-    # success_url = '/artballot/entries'
-    # form_class = EntriesForm
-    # template_name = "entries/entries_form.html"
-    # context_object_name = "entries"
-    
-# class EntriesFormView(FormView):
-    template_name = 'entries_form.html'
-    form_class = EntriesForm
+    template_name = 'entries/entries_new.html'
+    fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    success_url = '/new'
 
 class EntriesListView(ListView):
     model = Artwork
