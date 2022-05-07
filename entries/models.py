@@ -29,6 +29,9 @@ class Artwork(models.Model):
     def __str__(self):
         return self.artwork_title
 
+    def get_absolute_url(self):
+        return reverse('')
+
 
 class Artist(models.Model):
     full_name = models.CharField(max_length=200)

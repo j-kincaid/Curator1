@@ -1,8 +1,14 @@
 from django import forms
 
-from .models import Artwork
+
+# class EntriesForm(forms.ModelForm):
+
+    # class Meta:
+    #     model = Artwork
+    #     fields = ('artwork_title', 'medium')
+
 
 class EntriesForm(forms.ModelForm):
-    class Meta:
-        model = Artwork
-        fields = ('artwork_title', 'medium')
+    name = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea)
+
