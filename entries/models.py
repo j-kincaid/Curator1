@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import uuid
 
@@ -28,10 +29,8 @@ class Artwork(models.Model):
     year_completed = models.IntegerField(default=2022)
     def __str__(self):
         return self.artwork_title
-
     def get_absolute_url(self):
-        return reverse('')
-
+        return reverse('entries.detail', kwargs={'pk': self.pk})
 
 class Artist(models.Model):
     full_name = models.CharField(max_length=200)
