@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h2 class=""><a href="{% url 'entries.form' %}" class="text-dark text-decoration-none">Add an entry</a></h2>
     <h1 class="my-5">These are the entries:</h1>
     <div class="row row-cols3 g-2"> 
             {% for entry in entries %}
