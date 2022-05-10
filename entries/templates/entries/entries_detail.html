@@ -5,5 +5,7 @@
     <h1 class="my-5">{{entry.artwork_title}}</h1>
     <p>{{entry.medium}}</p>
 </div>
+
+<a href="{{ entries.get_absolute_url }}" class="btn btn-secondary my-5">Back to list</a>
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 {% endblock %}

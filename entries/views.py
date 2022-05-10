@@ -21,7 +21,7 @@ class EntriesDetailView(DetailView):
     template_name = "entries/entries_detail.html"
 
 """
-Using ModelForm for database-driven features. The docs say You do not even need to provide a success_url for CreateView or UpdateView - they will use get_absolute_url() on the model object if available.
+Using ModelForm for database-driven features. The docs say 'You do not even need to provide a success_url for CreateView or UpdateView - they will use get_absolute_url() on the model object if available'.
 
 """
 class EntriesForm(ModelForm):
@@ -39,7 +39,6 @@ class EntriesCreateView(CreateView):
 class EntriesUpdateView(UpdateView):
     model = Artwork
     fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
-    template_name_suffix = '_update'
 
 
 class EntriesDeleteView(DeleteView):
