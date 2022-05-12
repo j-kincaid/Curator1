@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView,DeleteView
 from django.forms import ModelForm
 from .models import Artwork
 
@@ -43,6 +43,14 @@ class EntriesUpdateView(UpdateView):
 
 class EntriesDeleteView(DeleteView):
     model = Artwork
-    success_url = reverse_lazy('entries_list')
+    # success_url = reverse_lazy('entries_list')
+
+    success_url = '/' # when post is deleted, redirect user to Homepage
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
 
 
