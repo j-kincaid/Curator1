@@ -9,7 +9,6 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 - Administrator account creation
 - Panelist account creation
 - Logins with validation
-- Display thumbnail images of the artworks submitted to a call for entries
 - Admin(s) complete fields for applicants, selection criteria, scoring, comments, etc., as much data as they need
 - Panelists can create, read, update, and delete their own entries until the "deadline".
 - Admin can create a report displaying scoring and any fields as desired.
