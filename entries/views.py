@@ -1,6 +1,4 @@
 from dataclasses import field
-from re import template
-from django.shortcuts import render
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
@@ -32,7 +30,7 @@ class EntriesForm(ModelForm):
 
 class EntriesCreateView(CreateView):
     model = Artwork
-    template_name = 'entries/entries_form.html'
+    template_name = 'entries/entries_edit.html'
     fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
 
 

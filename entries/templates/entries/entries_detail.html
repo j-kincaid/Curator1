@@ -8,6 +8,8 @@
 </div>
 
 <a href="{% url 'entries.form' %}" class="btn btn-danger my-5">Delete Entry</a>
-<a href="{% url 'entries.form' %}" class="btn btn-secondary my-5">Update Entry</a>
+<a href="{% url 'entries.edit' pk=entry.pk %}" class="btn btn-secondary my-5">
+    {% include './icons/pencil-fill.svg' %}
+</a>
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 {% endblock %}
