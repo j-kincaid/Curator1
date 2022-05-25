@@ -3,7 +3,7 @@
 {% block content %}
 <h2>New Entry</h2>
 
-<form action="{% url 'entries.edit' %}" method='POST'>{% csrf_token %}
+<form action="{% url 'entries.form' %}" method='POST'>{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary my-5">Update</button>
 </form>
