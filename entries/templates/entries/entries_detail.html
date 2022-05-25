@@ -6,9 +6,5 @@
     <p>{{entry.medium}}</p>
 </div>
 
-<!-- In the first 'Back to list' button it sees entries.get_absolute_url and stays on the same template where it is, because the url doesn't direct it to the list page. I'll check out a branch and test it. BTW I tried to write a docstring and VSCode didn't allow it in this file.
- -->
-
-<a href="{{ entries.get_absolute_url }}" class="btn btn-secondary my-5">Back to list</a>
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 {% endblock %}
