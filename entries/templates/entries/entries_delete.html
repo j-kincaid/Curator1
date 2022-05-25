@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<form action="{% url 'entries.delete' %}" method='POST'>{% csrf_token %}
-    {{ form.as_p }}
-
-    <h2>Are you sure you want to delete the post "{{ entry.artwork_title }}"</h2>
-    <button type="submit" class="btn btn-primary my-5">Yes, Delete Entry</button>
+<form method="POST">{% csrf_token %}
+    <p>Are you sure you want to delete "{{entry.artwork_title}}"?</p>
+    <p>This cannot be undone.</p>
+    <input type="submit" class="btn btn-danger" value="Delete" />
 </form>
-<a href="{% url 'entries.detail' %}" class="btn btn-secondary my-5">Back</a>
+
 {% endblock %}
