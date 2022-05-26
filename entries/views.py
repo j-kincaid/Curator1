@@ -1,4 +1,6 @@
+from pdb import post_mortem
 from django.http import Http404
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView,DeleteView
@@ -50,4 +52,5 @@ class EntriesDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('entries_list')
     template_engine = '/entries/entries_delete.html'
     login_url = '/login'
+
 
