@@ -3,7 +3,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView,DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -35,22 +35,23 @@ class EntriesForm(LoginRequiredMixin, ModelForm):
 
 class EntriesCreateView(LoginRequiredMixin, CreateView):
     model = Artwork
-    template_name = 'entries/entries_edit.html'
+    template_name = 'entries/artwork_update_form.html'
     fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
     login_url = '/login'
 
 
 class EntriesUpdateView(LoginRequiredMixin, UpdateView):
     model = Artwork
-    success_url: reverse_lazy('entries_edit')
-    form_class = EntriesForm
-    login_url = '/login'
+    fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    template_name_suffix = '_update_form'
 
 
 class EntriesDeleteView(LoginRequiredMixin, DeleteView):
     model = Artwork
-    success_url = reverse_lazy('entries_list')
-    template_engine = '/entries/entries_delete.html'
+    success_url = '/artballot/entries'
+    # template_name_suffix = '_confirm_delete'
+    # template_engine = '/entries/confirm_delete.html'
+    # template_name = 'entries/confirm_delete.html'
     login_url = '/login'
 
 

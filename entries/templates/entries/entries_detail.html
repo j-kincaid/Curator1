@@ -11,5 +11,5 @@
 <a href="{% url 'entries.update' pk=entry.pk %}" class="btn btn-secondary my-5">Update entry
     {% include './icons/pencil-fill.svg' %} 
 </a>
-<a href="{% url 'entries.delete' pk=entry.pk %}" class="btn btn-danger my-5">Delete Entry</a>
+<a href="{% url 'entries.confirm_delete' pk=entry.pk %}" class="btn btn-danger my-5">Delete Entry</a>
 {% endblock %}
