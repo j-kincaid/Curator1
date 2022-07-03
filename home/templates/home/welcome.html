@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Welcome to ArtBallot</h1>
+    <h1>Welcome</h1>
     <p>Today is {{today}}</p>
-    <a href="{% url 'entries.list' %}" class="btn btn-primary">View the entries</a>
+    <a href="{% url 'entries.list' %}" class="btn btn-secondary">View the entries</a>
 {% endblock %}
