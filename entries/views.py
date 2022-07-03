@@ -49,7 +49,7 @@ class EntriesUpdateView(LoginRequiredMixin, UpdateView):
 class EntriesDeleteView(LoginRequiredMixin, DeleteView):
     model = Artwork
     success_url = '/artballot/entries'
-    # template_name_suffix = '_confirm_delete'
+    template_name_suffix = '_confirm_delete'
     # template_engine = '/entries/confirm_delete.html'
     # template_name = 'entries/confirm_delete.html'
     login_url = '/login'
