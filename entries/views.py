@@ -1,13 +1,14 @@
-from dataclasses import field
-from re import template
-from django.shortcuts import render
+from pdb import post_mortem
 from django.http import Http404
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm
-from .models import Artwork
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+from .models import Artwork
+from .forms import EntriesForm
 
 class EntriesListView(ListView):
     model = Artwork
@@ -15,34 +16,42 @@ class EntriesListView(ListView):
     template_name = "entries/entries_list.html"
 
 
-class EntriesDetailView(DetailView):
+class EntriesDetailView(LoginRequiredMixin, DetailView):
     model = Artwork
     context_object_name = "entry"
     template_name = "entries/entries_detail.html"
+    login_url = '/login'
 
 """
 Using ModelForm for database-driven features. The docs say 'You do not even need to provide a success_url for CreateView or UpdateView - they will use get_absolute_url() on the model object if available'.
 
 """
-class EntriesForm(ModelForm):
+class EntriesForm(LoginRequiredMixin, ModelForm):
     class Meta:
         model = Artwork
         fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+        login_url = '/login'
 
 
-class EntriesCreateView(CreateView):
+class EntriesCreateView(LoginRequiredMixin, CreateView):
     model = Artwork
-    template_name = 'entries/entries_form.html'
+    template_name = 'entries/artwork_update_form.html'
     fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    login_url = '/login'
 
 
-class EntriesUpdateView(UpdateView):
+class EntriesUpdateView(LoginRequiredMixin, UpdateView):
     model = Artwork
     fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    template_name_suffix = '_update_form'
 
 
-class EntriesDeleteView(DeleteView):
+class EntriesDeleteView(LoginRequiredMixin, DeleteView):
     model = Artwork
-    success_url = reverse_lazy('entries_list')
+    success_url = '/artballot/entries'
+    template_name_suffix = '_confirm_delete'
+    # template_engine = '/entries/confirm_delete.html'
+    # template_name = 'entries/confirm_delete.html'
+    login_url = '/login'
 
 
