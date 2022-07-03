@@ -1,21 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="my-5">These are the entries:</h1>
-    <div class="row row-cols3 g-2"> 
+    <h1 class="my-5">The Entries:</h1>
+    
+       <div class="container"> 
+        <div class="row justify-content-md-center">
             {% for entry in entries %}
-            <div class="col"> 
-                <div class="p-3 border">
-                    <a href="{% url 'entries.detail' pk=entry.id %}" class="text-dark text-decoration-none">
-                        <h3>{{entry.artwork_title}}</h3>
-                    </a>
-                    {{entry.medium}}
-                </div>
+            <div class="card" style="width: 16rem;">
                 
-            </div>
+                <div class="card-body">
+                    <h3>{{entry.artwork_title}}</h3>
+                    
+                   
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <p class="card-text">{{entry.medium}}</p>
+                  <p class="card-text">{{entry.year_completed}}</p>
+                  <h3 class="card-title"><a href="{% url 'entries.detail' pk=entry.id %}" class="btn btn-secondary">Detail View 
+                </a></h3>
+                  <a href="#" class="btn btn-success">Vote</a>
+                </div>
+              </div>
+            <!-- <div class="col position-relative mb-4 mb-lg-5">  -->
+        
             {% endfor %}
-
-        <div class="p-3 border"><a href="{% url 'entries.form' %}" class="text-dark text-decoration-none">Add an entry</a>
-
-        </div>
+        <!-- <div class="p-3 border"><a href="{% url 'entries.form' %}" class="text-dark text-decoration-none">Add an entry</a>
+        </div> -->
+    </div>
+    </div>
+        
 {% endblock %}
