@@ -5,7 +5,7 @@
 <form method="POST">{% csrf_token %}
     <p>Are you sure you want to delete "{{artwork.artwork_title}}"?</p>
     <p>This cannot be undone.</p>
-    <input type="submit" class="btn btn-danger" value="Delete" />
+    <input type="submit" class="btn btn-danger" value="Confirm" />
 </form>
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 {% endblock %}
