@@ -3,8 +3,14 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import uuid
 
+# Each Artwork is related to a single artist. 
 class Artwork(models.Model):
+    # votes = models.IntegerField(default=0)
     artwork_title = models.CharField(max_length=200)
+    # tags = models.ManyToManyField('Tag', blank=True)
+    vote_total = models.IntegerField(default=0, null=True, blank=True)
+    vote_average = models.IntegerField(default=0, null=True, blank=True)
+
     MEDIA = (
         ('Painting', 'PAINTING'),
         ('Sculpture', 'SCULPTURE'),
@@ -16,6 +22,7 @@ class Artwork(models.Model):
         ('Other', 'OTHER',),
     )
     medium = models.CharField(max_length=20, null=True, choices=MEDIA)
+    
     height_in_inches = models.DecimalField(max_digits=5, decimal_places=2, default="inches")
     width_in_inches = models.DecimalField(max_digits=5, decimal_places=2, default="inches")
     depth_in_inches = models.DecimalField(max_digits=5, decimal_places=2, default="inches")
