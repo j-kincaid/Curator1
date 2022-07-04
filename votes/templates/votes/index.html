@@ -3,13 +3,20 @@
      {% block content %}
 
         {% if latest_question_list %}
-            <ul>
+
+
+       
             {% for question in latest_question_list %}
-                <li><a href="{% url 'votes:detail' question.id %}">{{ question.question_text }}</a></li>
-            {% endfor %}
+            
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-dark">
+                    <a a class="nav-link active" href="{% url 'votes:detail' question.id %}">{{ question.question_text }}</a>
+                </li>
             </ul>
+            {% endfor %}
+       
         {% else %}
             <p>No votes are available.</p>
         {% endif %}
-
+    
     {% endblock %}

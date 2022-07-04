@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.db import models
-from pytz import timezone
+from django.utils import timezone
 
 
 class Question(models.Model):

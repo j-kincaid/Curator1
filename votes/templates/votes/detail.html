@@ -2,8 +2,9 @@
     <body>
         <div class="list-group">
         <h1>{{ question.question_text }}</h1>
-       
+        
         <form action="{% url 'votes:vote' question.id %}" method="post">
+           
             {% csrf_token %}
             <fieldset>
                 <legend><h1>{{ question.question_text }}</h1></legend>
@@ -14,7 +15,9 @@
                 {% endfor %}
             </fieldset>
             <input type="submit" value="Vote">
+        </div>
             </form>
         </div>
+        
     </body>
 </html>
