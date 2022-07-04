@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-# from entries.views import EntriesListView, EntriesDetailView, EntriesCreateView, EntriesUpdateView, EntriesDeleteView
+
 
 urlpatterns = [
     path('entries', views.EntriesListView.as_view(), name="entries.list"),
