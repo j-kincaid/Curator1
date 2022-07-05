@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
 from datetime import datetime
+from django.views import generic 
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
@@ -33,3 +34,7 @@ class HomeView(TemplateView):
 class AuthorizedView(LoginRequiredMixin, TemplateView):
     template_name = 'home/authorized.html'
     login_url = '/admin'
+
+class IndexView(generic.ListView):
+    template_name = 'votes/index.html'
+    context_object_name = 'latest_question_list'
