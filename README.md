@@ -10,7 +10,7 @@ An app providing a rubric to assist nonprofit arts organizations in selecting ar
 - Panelist account creation
 - Logins with validation
 - Admin(s) complete fields for applicants, selection criteria, scoring, comments, etc., as much data as they need
-- Panelists can create, read, update, and delete their own entries until the "deadline".
+- Panelists can create, read, update, and delete their own entries until the "deadline."
 - Admin can create a report displaying scoring and any fields as desired.
 
 ### GOALS: 
