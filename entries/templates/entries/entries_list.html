@@ -17,7 +17,7 @@
                   <p class="card-text">{{entry.year_completed}}</p>
                   <h3 class="card-title"><a href="{% url 'entries.detail' pk=entry.id %}" class="btn btn-secondary">Detail View 
                 </a></h3>
-                  <a href="#" class="btn btn-success">Vote</a>
+                  <a href="{% url 'votes'%}" class="btn btn-success">Vote</a>
                 </div>
               </div>
             <!-- <div class="col position-relative mb-4 mb-lg-5">  -->
