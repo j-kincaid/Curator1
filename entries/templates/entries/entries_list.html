@@ -10,10 +10,8 @@
                 
                 <div class="card-body">
                     <h3>{{entry.artwork_title}}</h3>
-                    
-                   
-                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                   <p class="card-text">{{entry.medium}}</p>
+                  <p class="card-text"><small class="text-muted">{{entry.height_in_inches}} in. x {{entry.width_in_inches}} in.</small></p>
                   <p class="card-text">{{entry.year_completed}}</p>
                   <h3 class="card-title"><a href="{% url 'entries.detail' pk=entry.id %}" class="btn btn-secondary">Detail View 
                 </a></h3>
