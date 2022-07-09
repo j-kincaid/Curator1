@@ -29,20 +29,26 @@ Using ModelForm for database-driven features. The docs say 'You do not even need
 class EntriesForm(LoginRequiredMixin, ModelForm):
     class Meta:
         model = Artwork
-        fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+        fields = ['artwork_title', 
+        # 'medium', 
+        'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
         login_url = '/login'
 
 
 class EntriesCreateView(LoginRequiredMixin, CreateView):
     model = Artwork
     template_name = 'entries/artwork_update_form.html'
-    fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    fields = ['artwork_title', 
+    # 'medium', 
+    'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
     login_url = '/login'
 
 
 class EntriesUpdateView(LoginRequiredMixin, UpdateView):
     model = Artwork
-    fields = ['artwork_title', 'medium', 'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
+    fields = ['artwork_title', 
+    # 'medium', 
+    'height_in_inches', 'width_in_inches', 'depth_in_inches', 'year_completed']
     template_name_suffix = '_update_form'
 
 
