@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0019_artwork_medium'),
+        ("entries", "0019_artwork_medium"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='artwork',
-            name='artwork_medium',
+            model_name="artwork",
+            name="artwork_medium",
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='year_completed',
+            model_name="artwork",
+            name="year_completed",
             field=models.IntegerField(default=2022),
         ),
     ]

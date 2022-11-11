@@ -7,26 +7,36 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0001_initial'),
+        ("entries", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Artist',
+            name="Artist",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=200)),
-                ('pronouns', models.CharField(max_length=200)),
-                ('bio', models.CharField(max_length=500)),
-                ('pub_date', models.DateTimeField(verbose_name='date published')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("full_name", models.CharField(max_length=200)),
+                ("pronouns", models.CharField(max_length=200)),
+                ("bio", models.CharField(max_length=500)),
+                ("pub_date", models.DateTimeField(verbose_name="date published")),
             ],
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='question',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='entries.artist'),
+            model_name="artwork",
+            name="question",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="entries.artist"
+            ),
         ),
         migrations.DeleteModel(
-            name='Question',
+            name="Question",
         ),
     ]

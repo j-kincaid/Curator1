@@ -6,13 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0018_artist'),
+        ("entries", "0018_artist"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='artwork',
-            name='medium',
-            field=models.CharField(choices=[('PA', 'Painting'), ('SC', 'Sculpture'), ('PH', 'Photography'), ('CE', 'Ceramic'), ('TX', 'Textile'), ('PT', 'Print'), ('DG', 'Digital'), ('OT', 'Other')], max_length=2, null=True),
+            model_name="artwork",
+            name="medium",
+            field=models.CharField(
+                choices=[
+                    ("PA", "Painting"),
+                    ("SC", "Sculpture"),
+                    ("PH", "Photography"),
+                    ("CE", "Ceramic"),
+                    ("TX", "Textile"),
+                    ("PT", "Print"),
+                    ("DG", "Digital"),
+                    ("OT", "Other"),
+                ],
+                max_length=2,
+                null=True,
+            ),
         ),
     ]

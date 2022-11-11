@@ -6,28 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0011_artwork_artwork_medium'),
+        ("entries", "0011_artwork_artwork_medium"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='artwork',
-            name='artwork_medium',
-            field=models.CharField(default='ex. Fiber', max_length=200),
+            model_name="artwork",
+            name="artwork_medium",
+            field=models.CharField(default="ex. Fiber", max_length=200),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='depth',
-            field=models.DecimalField(decimal_places=2, default='inches', max_digits=5),
+            model_name="artwork",
+            name="depth",
+            field=models.DecimalField(decimal_places=2, default="inches", max_digits=5),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='height',
-            field=models.DecimalField(decimal_places=2, default='inches', max_digits=5),
+            model_name="artwork",
+            name="height",
+            field=models.DecimalField(decimal_places=2, default="inches", max_digits=5),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='width',
-            field=models.DecimalField(decimal_places=2, default='inches', max_digits=5),
+            model_name="artwork",
+            name="width",
+            field=models.DecimalField(decimal_places=2, default="inches", max_digits=5),
         ),
     ]

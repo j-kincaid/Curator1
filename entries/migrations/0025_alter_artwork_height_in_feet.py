@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0024_remove_artwork_medium'),
+        ("entries", "0024_remove_artwork_medium"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='artwork',
-            name='height_in_feet',
+            model_name="artwork",
+            name="height_in_feet",
             field=models.DecimalField(decimal_places=2, default=0.0, max_digits=5),
         ),
     ]

@@ -8,54 +8,84 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0013_auto_20220424_1450'),
+        ("entries", "0013_auto_20220424_1450"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('entry_score', models.DecimalField(decimal_places=2, max_digits=5)),
-                ('pub_date', models.DateTimeField(verbose_name='date published')),
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
+                ("entry_score", models.DecimalField(decimal_places=2, max_digits=5)),
+                ("pub_date", models.DateTimeField(verbose_name="date published")),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
             ],
         ),
         migrations.RemoveField(
-            model_name='artwork',
-            name='artist',
+            model_name="artwork",
+            name="artist",
         ),
         migrations.RemoveField(
-            model_name='artwork',
-            name='votes',
+            model_name="artwork",
+            name="votes",
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='vote_average',
+            model_name="artwork",
+            name="vote_average",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='vote_total',
+            model_name="artwork",
+            name="vote_total",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='id',
-            field=models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True),
+            model_name="artwork",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.uuid4,
+                editable=False,
+                primary_key=True,
+                serialize=False,
+                unique=True,
+            ),
         ),
         migrations.CreateModel(
-            name='Comment',
+            name="Comment",
             fields=[
-                ('body', models.TextField(blank=True, null=True)),
-                ('value', models.CharField(max_length=500)),
-                ('pub_date', models.DateTimeField(verbose_name='date published')),
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('artwork', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='entries.artwork')),
+                ("body", models.TextField(blank=True, null=True)),
+                ("value", models.CharField(max_length=500)),
+                ("pub_date", models.DateTimeField(verbose_name="date published")),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "artwork",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="entries.artwork",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='tags',
-            field=models.ManyToManyField(blank=True, to='entries.Tag'),
+            model_name="artwork",
+            name="tags",
+            field=models.ManyToManyField(blank=True, to="entries.Tag"),
         ),
     ]

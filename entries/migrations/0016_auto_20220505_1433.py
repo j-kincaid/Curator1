@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0015_auto_20220505_1422'),
+        ("entries", "0015_auto_20220505_1422"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='tag',
-            name='entry_score',
+            model_name="tag",
+            name="entry_score",
         ),
         migrations.AddField(
-            model_name='tag',
-            name='entry_score_1_to_5',
+            model_name="tag",
+            name="entry_score_1_to_5",
             field=models.DecimalField(decimal_places=0, default=0, max_digits=1),
         ),
     ]

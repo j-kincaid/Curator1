@@ -6,23 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0009_auto_20220424_1420'),
+        ("entries", "0009_auto_20220424_1420"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='artwork',
-            name='depth',
+            model_name="artwork",
+            name="depth",
             field=models.DecimalField(decimal_places=2, max_digits=5),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='height',
+            model_name="artwork",
+            name="height",
             field=models.DecimalField(decimal_places=2, max_digits=5),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='width',
+            model_name="artwork",
+            name="width",
             field=models.DecimalField(decimal_places=2, max_digits=5),
         ),
     ]

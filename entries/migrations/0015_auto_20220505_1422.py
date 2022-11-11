@@ -7,39 +7,45 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0014_auto_20220505_1344'),
+        ("entries", "0014_auto_20220505_1344"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='Artist',
+            name="Artist",
         ),
         migrations.RemoveField(
-            model_name='artwork',
-            name='tags',
+            model_name="artwork",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='comment',
-            name='artwork',
+            model_name="comment",
+            name="artwork",
         ),
         migrations.AddField(
-            model_name='comment',
-            name='artworks',
-            field=models.ManyToManyField(blank=True, to='entries.Artwork'),
+            model_name="comment",
+            name="artworks",
+            field=models.ManyToManyField(blank=True, to="entries.Artwork"),
         ),
         migrations.AddField(
-            model_name='tag',
-            name='artwork',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='entries.artwork'),
+            model_name="tag",
+            name="artwork",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="entries.artwork",
+            ),
         ),
         migrations.AlterField(
-            model_name='artwork',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="artwork",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='tag',
-            name='entry_score',
+            model_name="tag",
+            name="entry_score",
             field=models.DecimalField(decimal_places=2, max_digits=2),
         ),
     ]
