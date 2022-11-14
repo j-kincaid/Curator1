@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import uuid
 
+# within entries each artwork is a model.
 
 class Artwork(models.Model):
     artwork_title = models.CharField(max_length=200)
@@ -19,6 +20,7 @@ class Artwork(models.Model):
             "OTHER",
         ),
     )
+    # Each Artwork has the properties that will display in the form:
     # medium = models.CharField(max_length=20, null=True, choices=MEDIA)
     height_in_feet = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
     height_in_inches = models.DecimalField(
@@ -39,15 +41,15 @@ class Artwork(models.Model):
         return reverse("entries.detail", kwargs={"pk": self.pk})
 
 
-class Artist(models.Model):
-    full_name = models.CharField(max_length=200)
-    pronouns = models.CharField(max_length=200)
-    bio = models.TextField()
-    pub_date = models.DateTimeField("date published")
-    artworks = models.ManyToManyField("Artwork", blank=True)
+# class Artist(models.Model):
+#     full_name = models.CharField(max_length=200)
+#     pronouns = models.CharField(max_length=200)
+#     bio = models.TextField()
+#     pub_date = models.DateTimeField("date published")
+#     artworks = models.ManyToManyField("Artwork", blank=True)
 
-    def __str__(self):
-        return self.full_name
+#     def __str__(self):
+#         return self.full_name
 
 
 class Comment(models.Model):
