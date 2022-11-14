@@ -1,14 +1,15 @@
 from pdb import post_mortem
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms import ModelForm
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.forms import ModelForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .models import Artwork
 from .forms import EntriesForm
+from .models import Artwork
 
 
 class EntriesListView(ListView):
@@ -35,7 +36,7 @@ class EntriesForm(LoginRequiredMixin, ModelForm):
         model = Artwork
         fields = [
             "artwork_title",
-            # 'medium',
+            "medium",
             "height_in_inches",
             "width_in_inches",
             "depth_in_inches",
@@ -49,7 +50,7 @@ class EntriesCreateView(LoginRequiredMixin, CreateView):
     template_name = "entries/artwork_update_form.html"
     fields = [
         "artwork_title",
-        # 'medium',
+        "medium",
         "height_in_inches",
         "width_in_inches",
         "depth_in_inches",
@@ -62,7 +63,7 @@ class EntriesUpdateView(LoginRequiredMixin, UpdateView):
     model = Artwork
     fields = [
         "artwork_title",
-        # 'medium',
+        "medium",
         "height_in_inches",
         "width_in_inches",
         "depth_in_inches",
