@@ -19,6 +19,10 @@ class EntriesListView(ListView):
 
 
 class EntriesDetailView(LoginRequiredMixin, DetailView):
+    # try:
+    #     artwork = Artwork.objects.get(pk=pk)
+    # except Artwork.DoesNotExist:
+    #     raise Http404("Artwork does not exist.")
     model = Artwork
     context_object_name = "entry"
     template_name = "entries/entries_detail.html"

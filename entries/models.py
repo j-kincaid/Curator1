@@ -1,7 +1,8 @@
+import uuid
+
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-import uuid
 
 # within entries each artwork is a Model. It is stored in the database in the entries application.
 

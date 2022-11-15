@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Artwork, Comment, Tag
+
+# from .models import Artwork, Comment, Tag
 from . import models
 
 
