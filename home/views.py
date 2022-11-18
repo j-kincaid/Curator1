@@ -44,5 +44,5 @@ class AuthorizedView(LoginRequiredMixin, TemplateView):
 
 
 class IndexView(generic.ListView):
-    template_name = "votes/index.html"
+    # template_name = "votes/index.html"
     context_object_name = "latest_question_list"
