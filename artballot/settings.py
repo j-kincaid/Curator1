@@ -32,6 +32,9 @@ ALLOWED_HOSTS = ["127.0.0.1", ".pythonanywhere.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    "entries.apps.EntriesConfig",
+    "home.apps.HomeConfig",
+    "votes.apps.VotesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,9 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # my apps
-    "home",
-    "votes",
-    "entries",
+    # "home",
+    # "votes",
+    # "entries",
 ]
 
 MIDDLEWARE = [
