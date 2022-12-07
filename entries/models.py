@@ -36,6 +36,8 @@ class Artwork(models.Model):
     )
     year_completed = models.IntegerField(default=2022)
 
+    tags = models.ManyToManyField('Tag', blank=True)
+
     def __str__(self):
         return self.artwork_title
 
@@ -43,34 +45,53 @@ class Artwork(models.Model):
         return reverse("entries.detail", kwargs={"pk": self.pk})
 
 
-class Artist(models.Model):
-    full_name = models.CharField(max_length=200)
-    pronouns = models.CharField(max_length=200)
-    bio = models.TextField()
-    pub_date = models.DateTimeField("date published")
-    artworks = models.ManyToManyField("Artwork", blank=True)
+# class Artist(models.Model):
+#     full_name = models.CharField(max_length=200)
+#     pronouns = models.CharField(max_length=200)
+#     bio = models.TextField()
+#     pub_date = models.DateTimeField("date published")
+#     artworks = models.ManyToManyField("Artwork", blank=True)
 
-    def __str__(self):
-        return self.full_name
+#     def __str__(self):
+#         return self.full_name
 
 
-class Comment(models.Model):
-    artworks = models.ManyToManyField("Artwork", blank=True)
-    body = models.TextField(null=True, blank=True)
-    value = models.CharField(max_length=500)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(
-        default=uuid.uuid4, unique=True, primary_key=True, editable=False
+# class Comment(models.Model):
+#     artworks = models.ManyToManyField("Artwork", blank=True)
+#     body = models.TextField(null=True, blank=True)
+#     value = models.CharField(max_length=500)
+#     pub_date = models.DateTimeField(auto_now_add=True)
+#     id = models.UUIDField(
+#         default=uuid.uuid4, unique=True, primary_key=True, editable=False
+#     )
+
+#     def __str__(self):
+#         return self.value
+
+class Review(models.Model):
+    VOTE_TYPE = (
+        ('poor', 1),
+        ('fair', 2),
+        ('good', 3),
+        ('excellent', 4),
+        ('sublime', 5),  
     )
+    # owner = 
+    artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
+    body = models.TextField(null=True, blank=True)
+    value = models.CharField(max_length=200, choices=VOTE_TYPE)
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
 
     def __str__(self):
         return self.value
 
+# Use Tag to create a Many to Many relationship. It connects the Artworks with the votes they receive.
 
 class Tag(models.Model):
-    artwork = models.ForeignKey("Artwork", null=True, on_delete=models.CASCADE)
-    entry_score_1_to_5 = models.DecimalField(default=0, max_digits=1, decimal_places=0)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(
-        default=uuid.uuid4, unique=True, primary_key=True, editable=False
-    )
+    name = models.CharField(max_length=200, default="default")
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.name
