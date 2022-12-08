@@ -8,53 +8,76 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0027_auto_20221114_1446'),
+        ("entries", "0027_auto_20221114_1446"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Review',
+            name="Review",
             fields=[
-                ('body', models.TextField(blank=True, null=True)),
-                ('value', models.CharField(choices=[('poor', 1), ('fair', 2), ('good', 3), ('excellent', 4), ('sublime', 5)], max_length=200)),
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
+                ("body", models.TextField(blank=True, null=True)),
+                (
+                    "value",
+                    models.CharField(
+                        choices=[
+                            ("poor", 1),
+                            ("fair", 2),
+                            ("good", 3),
+                            ("excellent", 4),
+                            ("sublime", 5),
+                        ],
+                        max_length=200,
+                    ),
+                ),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
             ],
         ),
         migrations.RemoveField(
-            model_name='comment',
-            name='artworks',
+            model_name="comment",
+            name="artworks",
         ),
         migrations.RemoveField(
-            model_name='tag',
-            name='artwork',
+            model_name="tag",
+            name="artwork",
         ),
         migrations.RemoveField(
-            model_name='tag',
-            name='entry_score_1_to_5',
+            model_name="tag",
+            name="entry_score_1_to_5",
         ),
         migrations.RemoveField(
-            model_name='tag',
-            name='pub_date',
+            model_name="tag",
+            name="pub_date",
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='tags',
-            field=models.ManyToManyField(blank=True, to='entries.Tag'),
+            model_name="artwork",
+            name="tags",
+            field=models.ManyToManyField(blank=True, to="entries.Tag"),
         ),
         migrations.AddField(
-            model_name='tag',
-            name='name',
-            field=models.CharField(default='default', max_length=200),
+            model_name="tag",
+            name="name",
+            field=models.CharField(default="default", max_length=200),
         ),
         migrations.DeleteModel(
-            name='Artist',
+            name="Artist",
         ),
         migrations.DeleteModel(
-            name='Comment',
+            name="Comment",
         ),
         migrations.AddField(
-            model_name='review',
-            name='artwork',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='entries.artwork'),
+            model_name="review",
+            name="artwork",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="entries.artwork"
+            ),
         ),
     ]

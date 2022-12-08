@@ -36,7 +36,7 @@ class Artwork(models.Model):
     )
     year_completed = models.IntegerField(default=2022)
 
-    tags = models.ManyToManyField('Tag', blank=True)
+    tags = models.ManyToManyField("Tag", blank=True)
 
     def __str__(self):
         return self.artwork_title
@@ -68,30 +68,35 @@ class Artwork(models.Model):
 #     def __str__(self):
 #         return self.value
 
+
 class Review(models.Model):
     VOTE_TYPE = (
-        ('poor', 1),
-        ('fair', 2),
-        ('good', 3),
-        ('excellent', 4),
-        ('sublime', 5),  
+        ("poor", 1),
+        ("fair", 2),
+        ("good", 3),
+        ("excellent", 4),
+        ("sublime", 5),
     )
-    # owner = 
+    # owner =
     artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
     value = models.CharField(max_length=200, choices=VOTE_TYPE)
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
-                          primary_key=True, editable=False)
+    id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True, editable=False
+    )
 
     def __str__(self):
         return self.value
 
+
 # Use Tag to create a Many to Many relationship. It connects the Artworks with the votes they receive.
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=200, default="default")
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
-                          primary_key=True, editable=False)
+    id = models.UUIDField(
+        default=uuid.uuid4, unique=True, primary_key=True, editable=False
+    )
 
     def __str__(self):
         return self.name
