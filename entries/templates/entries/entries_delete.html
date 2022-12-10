@@ -5,7 +5,7 @@
 <form action="{% url 'entries.delete' %}" method='POST'>{% csrf_token %}
     {{ form.as_p }}
 
-    <h2>Are you sure you want to delete the post "{{ entry.artwork_title }}"</h2>
+    <h2>Are you sure you want to delete the artwork "{{ entry.artwork_title }}"</h2>
     <button type="submit" class="btn btn-primary my-5">Yes, Delete Entry</button>
 </form>
 <a href="{% url 'entries.detail' %}" class="btn btn-secondary my-5">Back</a>
