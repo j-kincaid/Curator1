@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # my apps
     "home",
-    "votes",
+    # "votes",
     "entries",
 ]
 
@@ -62,7 +62,7 @@ TEMPLATES = [
         "DIRS": [
             os.path.join(BASE_DIR, "templates"),
             BASE_DIR / "static/templates",
-            "/votes/index.html",
+            # "/votes/index.html",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
