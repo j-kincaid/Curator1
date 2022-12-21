@@ -3,7 +3,7 @@ from pdb import post_mortem
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import ModelForm
 from django.http import Http404
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -20,10 +20,14 @@ class EntriesListView(ListView):
 
 class EntriesDetailView(LoginRequiredMixin, DetailView):
     model = Artwork
+    artworks = Artwork.objects.all()
     context_object_name = "entry"
     template_name = "entries/entries_detail.html"
     login_url = "/login"
 
+    def artwork(request, pk):
+        artworkObj = Artwork.objects.get(id=pk)
+        return render(request, "entries/entries_detail.html")
 
 """
 Using ModelForm for database-driven features. The docs say 'You do not even need to provide a success_url for CreateView or UpdateView - they will use get_absolute_url() on the model object if available'.

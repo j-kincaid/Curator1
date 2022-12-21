@@ -5,7 +5,15 @@
 <div class="border round">
     <h1 class="my-5">{{entry.artwork_title}}</h1>
     <p>{{entry.medium}}</p>
+
+<p>{{entry.tag}}</p>
 </div>
+
+<hr>
+
+{% for tag in artwork.tags.all %}
+    <span class="border round">{{entry.tag}}</span>
+{% endfor %}
 
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 <a href="{% url 'entries.update' pk=entry.pk %}" class="btn btn-secondary my-5">Update entry
