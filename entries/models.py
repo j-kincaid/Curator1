@@ -60,6 +60,7 @@ class Review(models.Model):
         ("excellent", 4),
         ("sublime", 5),
     )
+    votes = models.IntegerField(default=0)
     # owner =
     artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
