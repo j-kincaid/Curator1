@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from . import models
 
-from .models import Artwork, Review, Tag
+from .models import Review, Tag
 
 
 class ArtworkAdmin(admin.ModelAdmin):

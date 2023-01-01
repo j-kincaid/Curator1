@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="my-5">The Entries:</h1>
+    
+       <div class="container"> 
+        <div class="row justify-content-md-center">
+            {% for entry in entries %}
+            <div class="card" style="width: 16rem;">
+                
+                <div class="card-body">
+                    <h3>{{entry.artwork_title}}</h3>
+                  <p class="card-text">{{entry.medium}}</p>
+                  <p class="card-text"><small class="text-muted">{{entry.height_in_inches}} in. x {{entry.width_in_inches}} in.</small></p>
+                  <p class="card-text">{{entry.year_completed}}</p>
+                  <h3 class="card-title"><a href="{% url 'entries.detail' pk=entry.id %}" class="btn btn-secondary">Detail View 
+                </a></h3>
+                  {% comment %} <a href="{% url 'votes'%}" class="btn btn-success">Vote</a> {% endcomment %}
+                </div>
+              </div>
+            {% endfor %}
+    </div>
+    </div>
+        
+{% endblock %}
