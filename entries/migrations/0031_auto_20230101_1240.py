@@ -6,17 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0030_review_votes'),
+        ("entries", "0030_review_votes"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='artwork',
-            name='source_link',
+            model_name="artwork",
+            name="source_link",
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='featured_image',
-            field=models.ImageField(blank=True, default='default_image.jpg', null=True, upload_to=''),
+            model_name="artwork",
+            name="featured_image",
+            field=models.ImageField(
+                blank=True, default="default_image.jpg", null=True, upload_to=""
+            ),
         ),
     ]

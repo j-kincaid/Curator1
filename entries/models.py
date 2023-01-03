@@ -53,7 +53,6 @@ class Artwork(models.Model):
         return reverse("entries.detail", kwargs={"pk": self.pk})
 
 
-
 class Review(models.Model):
     VOTE_TYPE = (
         ("poor", 1),

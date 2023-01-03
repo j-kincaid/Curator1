@@ -6,33 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('entries', '0028_auto_20221207_1340'),
+        ("entries", "0028_auto_20221207_1340"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='artwork',
-            name='demo_link',
+            model_name="artwork",
+            name="demo_link",
             field=models.CharField(blank=True, max_length=2000, null=True),
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='description',
+            model_name="artwork",
+            name="description",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='source_link',
+            model_name="artwork",
+            name="source_link",
             field=models.CharField(blank=True, max_length=2000, null=True),
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='vote_ratio',
+            model_name="artwork",
+            name="vote_ratio",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='artwork',
-            name='vote_total',
+            model_name="artwork",
+            name="vote_total",
             field=models.IntegerField(blank=True, default=0, null=True),
         ),
     ]

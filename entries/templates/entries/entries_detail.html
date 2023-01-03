@@ -14,6 +14,11 @@
 {% for tag in artwork.tags.all %}
     <span class="border round">{{entry.tag}}</span>
 {% endfor %}
+<img style="max-width: 500px;" src="{{ artwork.featured_image.url }}">
+
+{% for tag in artwork.tags.all %}
+    <span style="border:1px solid darkgrey;">{{tag}}</span>
+{%  endfor %}
 
 <a href="{% url 'entries.list' %}" class="btn btn-secondary my-5">Back to list</a>
 <a href="{% url 'entries.update' pk=entry.pk %}" class="btn btn-secondary my-5">Update entry

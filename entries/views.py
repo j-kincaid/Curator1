@@ -29,6 +29,7 @@ class EntriesDetailView(LoginRequiredMixin, DetailView):
         artworkObj = Artwork.objects.get(id=pk)
         return render(request, "entries/entries_detail.html")
 
+
 """
 Using ModelForm for database-driven features. The docs say 'You do not even need to provide a success_url for CreateView or UpdateView - they will use get_absolute_url() on the model object if available'.
 
