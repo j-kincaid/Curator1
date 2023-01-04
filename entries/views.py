@@ -6,7 +6,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormView
 
 from .forms import EntriesForm
 from .models import Artwork
@@ -82,3 +82,8 @@ class EntriesDeleteView(LoginRequiredMixin, DeleteView):
     success_url = "/artballot/entries"
     template_name_suffix = "_confirm_delete"
     login_url = "/login"
+
+
+class BallotFormView(LoginRequiredMixin, FormView):
+    template_name = "entries/entries_ballot.html"
+    success_url = '/ballot/'

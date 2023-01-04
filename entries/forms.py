@@ -8,6 +8,9 @@ class EntriesForm(forms.Form):
     name = forms.CharField()
     message = forms.CharField(widget=forms.Textarea)
 
+class VoteForm(forms.Form):
+    name = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea)
 
 class ArtworkForm(ModelForm):
     class Meta:

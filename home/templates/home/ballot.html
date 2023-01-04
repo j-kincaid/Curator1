@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Vote on an entry</h1>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit vote">
+    </form>
+    <hr/>
+    <hr />
+    <h5>Vote on {{entry.artwork_title}}</h5>
+   
+    <hr/>
+       
+        <div class="container text-center">
+         
+        
+        <div class="container"> 
+            <div class="justify-content-md-center">
+            <div class="row row-cols-6">
+                <div class="col">Artwork</div>
+                <div class="col">Originality</div>
+                <div class="col">Technique</div>
+                <div class="col">Impact</div>
+                <div class="col">Final Score</div>
+            </div>
+            <div class="row row-cols-6">
+                <div class="col">Artwork 1</div>
+                <div class="col">4.9</div>
+                <div class="col">4.3</div>
+                <div class="col">3.6</div>
+                <div class="col">4.26</div>
+            </div>
+            <div class="row row-cols-6">
+                <div class="col">Artwork 2</div>
+                <div class="col">3.6</div>
+                <div class="col">4.1</div>
+                <div class="col">4.5</div>
+                <div class="col">4.06</div>
+            </div>
+            <div class="row row-cols-6">
+                <div class="col">Artwork 3</div>
+                <div class="col">4.2</div>
+                <div class="col">3.2</div>
+                <div class="col">3.9</div>
+                <div class="col">3.76</div>
+            </div> 
+
+        </div>
+{% endblock %}

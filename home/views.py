@@ -3,7 +3,7 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from datetime import datetime
 from django.views import generic
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 
@@ -44,5 +44,13 @@ class AuthorizedView(LoginRequiredMixin, TemplateView):
 
 
 class IndexView(generic.ListView):
-    # template_name = "votes/index.html"
     context_object_name = "latest_question_list"
+
+
+# class VoteView(generic.FormView):
+#     template_name = "votes/index.html"
+#     context_object_name = "home/vote.html"
+#     def get(self, request, *args, **kwargs):
+#         if self.request.user.is_authenticated:
+#             return redirect("entries.list")
+#         return super().get(request, *args, **kwargs)
