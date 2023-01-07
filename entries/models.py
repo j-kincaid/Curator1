@@ -55,11 +55,11 @@ class Artwork(models.Model):
 
 class Review(models.Model):
     VOTE_TYPE = (
-        ("poor", 1),
-        ("fair", 2),
-        ("good", 3),
-        ("excellent", 4),
-        ("sublime", 5),
+        ("one_star", 1),
+        ("two_stars", 2),
+        ("three_stars", 3),
+        ("four_stars", 4),
+        ("five_stars", 5),
     )
     votes = models.IntegerField(default=0)
     # owner =
