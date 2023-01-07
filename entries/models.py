@@ -54,18 +54,18 @@ class Artwork(models.Model):
 
 
 class Review(models.Model):
-    VOTE_TYPE = (
-        ("poor", 1),
-        ("fair", 2),
-        ("good", 3),
-        ("excellent", 4),
-        ("sublime", 5),
+    STARS = (
+        ("one", 1),
+        ("two", 2),
+        ("three", 3),
+        ("four", 4),
+        ("five", 5),
     )
     votes = models.IntegerField(default=0)
     # owner =
     artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
-    value = models.CharField(max_length=200, choices=VOTE_TYPE)
+    value = models.CharField(max_length=200, choices=STARS)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False
     )
