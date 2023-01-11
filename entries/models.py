@@ -27,7 +27,6 @@ class Artwork(models.Model):
     )
     # Each Artwork has the properties that will display in the form:
     medium = models.CharField(max_length=20, null=True, choices=MEDIA)
-    height_in_feet = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
     height_in_inches = models.DecimalField(
         max_digits=5, decimal_places=2, default="inches"
     )

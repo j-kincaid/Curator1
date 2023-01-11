@@ -15,9 +15,12 @@ class ArtworkForm(ModelForm):
         fields = [
             "artwork_title",
             "featured_image",
-            "description",
+            "medium",
+            "height_in_inches",
+            "width_in_inches",
+            "depth_in_inches",
+            "year_completed",
             "demo_link",
-            "tags",
         ]
         widgets = {
             "tags": forms.CheckboxSelectMultiple(),

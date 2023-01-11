@@ -41,6 +41,7 @@ class EntriesForm(LoginRequiredMixin, ModelForm):
         model = Artwork
         fields = [
             "artwork_title",
+            "featured_image",
             "medium",
             "height_in_inches",
             "width_in_inches",
