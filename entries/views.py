@@ -56,6 +56,7 @@ class EntriesCreateView(LoginRequiredMixin, CreateView):
     template_name = "entries/artwork_update_form.html"
     fields = [
         "artwork_title",
+        "featured_image",
         "medium",
         "height_in_inches",
         "width_in_inches",
@@ -69,6 +70,7 @@ class EntriesUpdateView(LoginRequiredMixin, UpdateView):
     model = Artwork
     fields = [
         "artwork_title",
+        "featured_image",
         "medium",
         "height_in_inches",
         "width_in_inches",
