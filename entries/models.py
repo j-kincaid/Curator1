@@ -61,7 +61,6 @@ class Review(models.Model):
         ("five_stars", 5),
     )
     votes = models.IntegerField(default=0)
-    # owner =
     artwork = models.ForeignKey(Artwork, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
     value = models.CharField(max_length=200, choices=VOTE_TYPE)
